@@ -3,5 +3,11 @@
     "open-browser.url.title": "URL :",
     "open-browser.new-window": "Ouvrir dans une nouvelle fenêtre",
     "delay.entry.title": "Délai (s) :",
-    "delay.entry.subtitle": "Le délai avant que la prochaine action"
+    "delay.entry.subtitle": "Le délai avant que la prochaine action",
+    "settings.label_mode.title": "Source du libellé",
+    "settings.label_mode.subtitle": "Texte affiché comme nom du flux sur le deck",
+    "settings.label_mode.auto": "Auto (Media, sinon App)",
+    "settings.label_mode.app": "Application",
+    "settings.label_mode.media": "Media / Titre du flux",
+    "settings.label_mode.app_media": "App + Media"
 }
