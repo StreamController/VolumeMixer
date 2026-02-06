@@ -21,5 +21,11 @@
     "plugin.name": "Volume Mixer",
     "actions.hotkey.recorder.confirm-text": "Confirm",
     "actions.hotkey.recorder.clear-text": "Clear",
-    "input.muted": "Muted"
+    "input.muted": "Muted",
+    "settings.label_mode.title": "Label source",
+    "settings.label_mode.subtitle": "What should be shown as the stream name on the deck",
+    "settings.label_mode.auto": "Auto (prefer Media, fallback App)",
+    "settings.label_mode.app": "Application",
+    "settings.label_mode.media": "Media / Stream title",
+    "settings.label_mode.app_media": "App + Media"
 }

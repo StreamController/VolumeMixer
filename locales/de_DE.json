@@ -21,5 +21,11 @@
     "plugin.name": "Lautstärkemixer",
     "actions.hotkey.recorder.confirm-text": "Bestätigen",
     "actions.hotkey.recorder.clear-text": "Zurücksetzen",
-    "input.muted": "Stumm"
+    "input.muted": "Stumm",
+    "settings.label_mode.title": "Label-Quelle",
+    "settings.label_mode.subtitle": "Was soll als Stream-/Programmname auf dem Deck stehen",
+    "settings.label_mode.auto": "Auto (Media bevorzugen, sonst App)",
+    "settings.label_mode.app": "Anwendung",
+    "settings.label_mode.media": "Media / Stream-Titel",
+    "settings.label_mode.app_media": "App + Media"
 }

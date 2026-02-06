@@ -99,4 +99,4 @@ class DownKey(ActionBase):
             with Image.open(self.icon_path) as image:
                 enhancer = ImageEnhance.Brightness(image)
                 image = enhancer.enhance(brightness)
-                self.set_media(image=image.copy, size=0.8, valign=-1)
+                self.set_media(image=image.copy(), size=0.8, valign=-1)
