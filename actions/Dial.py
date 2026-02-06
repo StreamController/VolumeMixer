@@ -1,6 +1,5 @@
 from src.backend.DeckManagement.InputIdentifier import Input
 from src.backend.PluginManager.ActionBase import ActionBase
-from src.backend.PluginManager.ActionBase import ActionBase
 from src.backend.DeckManagement.DeckController import DeckController
 from src.backend.PageManagement.Page import Page
 from src.backend.PluginManager.PluginBase import PluginBase
@@ -9,13 +8,13 @@ import globals as gl
 from loguru import logger as log
 from fuzzywuzzy import fuzz
 import math
-
 import os
+
 
 class Dial(ActionBase):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        
+
         self.plugin_base.volume_actions.append(self)
 
     def on_ready(self):
@@ -44,7 +43,7 @@ class Dial(ActionBase):
         index = self.get_index()
         if index >= len(inputs):
             return
-        
+
         if event == Input.Dial.Events.SHORT_UP:
             mute = inputs[index].mute == 0
             self.plugin_base.pulse.mute(obj=inputs[index], mute=mute)
@@ -72,16 +71,21 @@ class Dial(ActionBase):
     def update_labels(self):
         inputs = self.plugin_base.pulse.sink_input_list()
         index = self.get_index()
-       
+
         if inputs[index].mute == 0:
             # Display volume % if input is not muted
-            volumeLabel = str(math.ceil(inputs[index].volume.value_flat*100)) + "%"
+            volumeLabel = str(math.ceil(inputs[index].volume.value_flat * 100)) + "%"
             labelColor = [255, 255, 255]
         else:
             # Display "muted" text if input is muted
             volumeLabel = "- " + self.plugin_base.lm.get("input.muted").upper() + " -"
             labelColor = [255, 0, 0]
-        
+
         self.set_top_label(text=volumeLabel, color=labelColor, font_size=16)
-        self.set_center_label(text=inputs[index].name, font_size=18)
+
+        # Better stream/app name (avoids generic "AudioStream", shows e.g. "ESO", "YouTube")
+        self.set_center_label(
+            text=self.plugin_base.get_display_name(inputs[index]),
+            font_size=18
+        )
         
