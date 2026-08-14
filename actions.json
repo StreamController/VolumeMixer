@@ -1,0 +1,47 @@
+{
+    "plugin": {
+        "description": "A volume mixer on the deck: one column per program that is playing audio, with its own volume up, down and mute keys.",
+        "requirements": "PulseAudio or PipeWire with the PulseAudio interface."
+    },
+    "actions": {
+        "Open": {
+            "description": "Opens the volume mixer. It switches the deck to the mixer page the plugin brings with it and remembers where it came from, so Exit can go back. This is the only action to put on a normal page - the others belong on the mixer page and are already placed there.",
+            "settings": {
+                "increments": {
+                    "type": "integer",
+                    "default": 10,
+                    "description": "How much one press changes the volume, in percent.",
+                    "example": 5
+                }
+            }
+        },
+        "Exit": {
+            "description": "Leaves the volume mixer and returns to the page it was opened from. Belongs on the mixer page.",
+            "settings": {}
+        },
+        "VolumeUp": {
+            "description": "Raises the volume of the program in this column by one step. Shows \"Max\" greyed out when the volume cannot go higher. Belongs on the mixer page - its column decides which program it controls.",
+            "settings": {}
+        },
+        "VolumeDown": {
+            "description": "Lowers the volume of the program in this column by one step. Belongs on the mixer page.",
+            "settings": {}
+        },
+        "VolumeMute": {
+            "description": "Mutes and unmutes the program in this column. Belongs on the mixer page.",
+            "settings": {}
+        },
+        "MoveRight": {
+            "description": "Scrolls the mixer one program to the right when more programs are playing than fit on the deck. Belongs on the mixer page.",
+            "settings": {}
+        },
+        "MoveLeft": {
+            "description": "Scrolls the mixer one program back to the left. Belongs on the mixer page.",
+            "settings": {}
+        },
+        "Dial": {
+            "description": "Controls one program from a dial: turning changes its volume, pressing mutes it. The dial's display shows the program's name and its volume. Belongs on the mixer page of a Stream Deck Plus.",
+            "settings": {}
+        }
+    }
+}
